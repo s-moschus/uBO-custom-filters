@@ -1,0 +1,442 @@
+[Adblock Plus 2.0]
+! Title: uBO Custom filters - Firefox
+! Version: 2024.03.14
+! Description: Block some elements and advertise on some websites for Firefox
+! Homepage: https://github.com/s-moschus/uBO-custom-filters/blob/main/uBO-custom-filters-firefox.txt
+
+! GENERAL
+! Hide ads script
+/ads.js$script
+! Disable box shadow
+*##*:not(.RNNXgb, .aajZCb, .btn-default.btn-md.btn-icon.btn.gl-button):style(box-shadow: unset !important)
+
+! Microsoft Bing (Block)
+bing.com##.below_sbox
+bing.com##.sw_lang:style(color: unset !important)
+
+! DuckDuckGo
+duckduckgo.com##.text_text-weight-normal__uWnDs
+duckduckgo.com##.center_andText__ejUnC
+duckduckgo.com##.home_belowTheFoldContainer__44wPy
+duckduckgo.com##.header__label
+duckduckgo.com##.feedback-btn.btn
+
+! Terabox
+terabox.com,1024tera.com##.drainage-img
+terabox.com,1024tera.com##.seo-banner-box
+
+! Fshare
+! Disable animetion
+fshare.vn##*:style(animation: unset !important)
+! Hide navbar components
+fshare.vn##^.mdc-tab-bar-scroller.nav-header
+fshare.vn##^.mdc-toolbar__section--align-start.mdc-toolbar__section
+! Hide chat components
+fshare.vn##^.brown.component-chat
+fshare.vn##^#link_social_fshare
+! Hide footers
+fshare.vn##^footer
+! Block ads
+fshare.vn##.popup-vip-cus__visibility
+fshare.vn##^.ads-login
+fshare.vn##^.quang-cao-trong
+fshare.vn##^.quang-cao-ben-trai
+fshare.vn##^.quang-cao-ben-phai
+fshare.vn##^.quang-cao-top-manager-file
+fshare.vn##^.first-paid-popup-cus__close-btn
+fshare.vn##^#p_first_paid_gift_float_icon
+fshare.vn##^#month_promp_voucher_code_download
+
+! TimFshare
+timfshare.com##[href="https://bit.ly/hdsdtimfshare"]
+
+! 𝕏 Twitter
+twitter.com,x.com##div.r-1d6w8o1.r-x572qd.r-1udh08x.r-1ifxtd0.r-rs99b7.r-1phboty.r-1867qdf.css-175oi2r:nth-of-type(3)
+twitter.com,x.com##div.r-1d6w8o1.r-x572qd.r-1udh08x.r-1ifxtd0.r-rs99b7.r-1phboty.r-1867qdf.css-175oi2r:nth-of-type(4)
+twitter.com,x.com##.r-ymttw5.r-1w6e6rj.r-18u37iz.css-175oi2r
+
+! Instagram
+instagram.com##._a9-h
+instagram.com##._a9-g
+
+! Facebook
+! Block video ads
+facebook.com##+js(set, Object.prototype.scrubber, undefined)
+! Hide people you may know on profile
+facebook.com##.x1xmf6yo.xev17xk
+
+! Block Sponsored & Engagement (Suggested posts & Follow button)
+!#if cap_html_filtering
+!||www.facebook.com^$doc,replace=/\],"data":\{"brs_content_label"[^,]+,"category":"SPONSORED[^\n]+"cursor":"[^"]+"\}/],"data":{}/
+!||www.facebook.com/api/graphql/$xhr,replace=/\{"brs_content_label":[^,]+,"category":"SPONSORED".+?"cursor":"[^"]+"\}/{}/
+!||www.facebook.com/api/graphql/$xhr,replace=/\{"brs_content_label":[^,]+,"category":"ENGAGEMENT[^\n]+"cursor":"[^"]+"\}/{}/g
+!#else
+!www.facebook.com##+js(trusted-replace-xhr-response, '\{"brs_content_label":[^,]+,"category":"SPONSORED".+?"cursor":"[^"]+"\}', {}, /api/graphql)
+!#endif
+
+! TikTok
+tiktok.com##.e1l04njg0
+tiktok.com##.ejkrawn1
+tiktok.com##.ejkrawn3
+
+! Google
+gemini.google.com##.banner
+play.google.com##.f0UV3d > span
+
+! YouTube
+! Margin title video (use with Nova YouTube script: Control panel below the player > on)
+youtube.com##h1.ytd-watch-metadata.style-scope:style(margin-top: 65px !important)
+! Margin title video (use with Tabview YouTube)
+!youtube.com##h1.ytd-watch-metadata.style-scope:style(margin-top: 10px !important)
+
+! YouTube
+! Disable delay 5s on non Chrome browser
+youtube.com##+js(nano-stb, resolve(1), *, 0.001)
+youtube.com##+js(set, yt.config_.EXPERIMENT_FLAGS.web_enable_ab_rsp_cl, false)
+youtube.com##+js(set, yt.config_.EXPERIMENT_FLAGS.ab_pl_man, false)
+||googlevideo.com/videoplayback$xhr,3p,method=get,domain=www.youtube.com
+! Hide clarify box
+youtube.com###clarify-box
+! Hide Ending overlay
+youtube.com##.ytp-ce-size-1280
+! Hide branding image
+youtube.com##.iv-branding
+! Hide banner Permium
+youtube.com###foreground-content
+! Ads in Sidebar
+youtube.com##.sparkles-light-cta
+! Hide shorts section on homepage
+youtube.com##ytd-rich-section-renderer:has(#rich-shelf-header:has-text(Shorts))
+youtube.com##ytd-reel-shelf-renderer:has(.ytd-reel-shelf-renderer:has-text(Shorts))
+! Remove empty spaces in grid
+youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: contents !important)
+
+! Hide suggest video <1000 views (for English)
+!youtube.com##div#metadata-line > span.ytd-video-meta-block:nth-of-type(1):not(:has-text(/K|M/)):upward(ytd-rich-item-renderer)
+! Ẩn đề xuất video có lượt xem thấp hơn 1000 (với giao diện Tiếng Việt)
+!youtube.com##div#metadata-line > span.ytd-video-meta-block:nth-of-type(1):not(:has-text(/N|Tr/)):upward(ytd-rich-item-renderer)
+
+! YouTube Music
+music.youtube.com##tp-yt-paper-dialog
+
+! Zalo
+chat.zalo.me##.tds-banner-download__content-wrapper
+chat.zalo.me##.snack-body
+
+! Voz
+! Ads
+voz.vn##^.shareButtons--iconic.shareButtons
+voz.vn##^#footer
+voz.vn##^#header
+voz.vn##^.message.message--post:has(pubtag.adsbypubpower)
+voz.vn##^.message.message--post:has(div#dablewidget_GlYpea7y)
+voz.vn##^.p-navEl-linkHolder
+voz.vn##^.notice-content
+voz.vn#@#div.message--post
+! Custom
+voz.vn##[class^="p-body-sidebar"]
+voz.vn##.message-inner:style(margin-top: 6px !important)
+! Center
+!voz.vn##.p-body:style(padding: 0 50px 0 50px !important)
+! Custom hide
+voz.vn##.p-sectionLinks
+voz.vn##.block-filterBar
+voz.vn##.structItem--quickCreate.structItem
+
+! Vn-z
+vn-z.vn##^.goog-te-gadget.skiptranslate
+vn-z.vn##^.notice-content
+||upanh.vn-z.vn/images/2023/02/22/Vnzoomvs-Anyviewer300.jpg$image,domain=vn-z.vn
+
+! Link1s
+link1s.com###ignielAdBlock
+
+! VNExpress
+vnexpress.net###g_id_onload
+
+! Xo so
+/^.*?xoso.*?$/##^.adv-side-bar
+/^.*?xoso.*?$/##^.banner-adv-wrapper
+/^.*?xoso.*?$/##^.banner-adv-wrapper2
+/^.*?xoso.*?$/##^.item-qc1
+/^.*?xoso.*?$/##^.block-banner
+/^.*?xoso.*?$/##^.line-header
+/^.*?xoso.*?$/##^.qc-content
+/^.*?xoso.*?$/##^.banner-600.qc-sticky
+/^.*?xoso.*?$/##svg, .bx_close_btn_red_serverImg.bx_close_btn
+||img.alygmeame.xyz/$image,domain=/^.*?xoso.*?$/
+
+! Ket qua
+/^.*?ketqua.*?$/##.aanetwork-flyicon-box
+/^.*?ketqua.*?$/###ads-block-notice
+
+! APK Pure
+apkpure.net###g_id_container
+apkpure.net##^#policy-info
+apkpure.net##^.chrome-install-pop
+apkpure.net##^.debut-game
+apkpure.net##^.share-fixed
+apkpure.net##^.float-button-second
+
+! APK Mirror
+apkmirror.com##.f-nowrap.d-flex.p-relative.f-100
+
+! A2Z APK
+a2zapk.*##.modalpop
+
+! NetTruyen (Block)
+/^.*?nettruyen.*?$/###item-detail > .small
+/^.*?nettruyen.*?$/##.aanetwork-flyicon-box
+/^.*?nettruyen.*?$/##.scroll-to-fixed-fixed.chapter-nav:style(position: unset !important; z-index: 100 !important)
+/^.*?nettruyen.*?$/##^#nt_comments > .mrt10
+/^.*?nettruyen.*?$/##^#nt_comments > div.mrt5
+/^.*?nettruyen.*?$/##^.comment
+/^.*?nettruyen.*?$/##^.comment-wrapper
+/^.*?nettruyen.*?$/##^.container div:not(.top)>div.mrb5.mrt5.text-center>a
+/^.*?nettruyen.*?$/##^.facebook-like
+/^.*?nettruyen.*?$/##^.footer
+/^.*?nettruyen.*?$/##^.hidden-sm.hidden-xs.mrb10.alert-info.alert
+/^.*?nettruyen.*?$/##^.icon-hot.icon
+/^.*?nettruyen.*?$/##^.lazy-module.main-tab.nav-tabs.nav
+/^.*?nettruyen.*?$/##^.lazy-module.top-members
+/^.*?nettruyen.*?$/##^.Module-180.Module.new-comments
+/^.*?nettruyen.*?$/##^.mrb10.mrt5
+/^.*?nettruyen.*?$/##^.mrb5.text-center.container
+/^.*?nettruyen.*?$/##^.notify_block
+/^.*?nettruyen.*?$/##^.rating.row
+/^.*?nettruyen.*?$/##^.reading-control > .mrb10
+/^.*?nettruyen.*?$/##^.reading-control > .mrb5
+/^.*?nettruyen.*?$/##^.text-center.page-chapter
+/^.*?nettruyen.*?$/##^.top > i
+
+! HentaiVN
+hentaivn.*##^#qxx
+hentaivn.*##^.main > p
+hentaivn.*##^.main > .qx_main
+hentaivn.*##^.footer
+hentaivn.*##^.buttonhide > [href="javascript:;"]
+
+! Truyện Tranh Gay
+truyentranhgay.*##.jss1043
+
+! CB Hentai
+cbhentai.net##^.c-sidebar
+
+! Đọc Sách Hay
+docsachhay.net##^.fs-17
+
+! Wattpad
+wattpad.com##pre:style(text-align: justify !important)
+wattpad.com##.btn-primary
+wattpad.com##.left-rail
+wattpad.com##^#footer-container
+||static.wattpad.com$image,domain=wattpad.com
+
+! Pops
+! Mobile
+pops.vn##.w-full.inline-block
+pops.vn##.div.ad__video
+! Age rating
+pops.vn##.wrapper-videojs_video__age-rating-warning__p_6ag
+! Banner ads
+pops.vn##a.block.mt-5
+pops.vn##.false.page-description_root__JJfnn
+
+! AnimeHay
+! Ads
+||animehay.*^*.gif
+animehay.*##div[style^="position: fixed; bottom: 0px;"]
+animehay.*##+js(acs, WebAssembly, instantiate)
+animehay.*##+js(acs, document.addEventListener, window.open)
+animehay.*##^script:has-text(banner)
+animehay.*##^#banner-shopee
+! Footer
+animehay.*##^.ah_footer
+! Tiêu đề thừa
+animehay.*##^.bg-black.margin-10-0
+! Ghi chú & thông báo
+animehay.*##^.bg-red.noti-info
+animehay.*##^.noti-success
+animehay.*##^.noti-warning
+animehay.*##^#ah_toast
+! Nút thiết lập, tắt đèn và nút tắt quảng cáo
+animehay.*##^.bg-lochinvar.fw-700
+animehay.*##^.bg-blue.fw-700
+animehay.*##^.bg-red.fw-700
+! Kệ đề cử
+animehay.*##^.ah-carousel
+! Chỉnh sửa giao diện
+! Fonts
+animehay.*##*:not(h1):style(font-weight: normal !important)
+! Border
+animehay.*##*:not(input):style(border: unset !important)
+! Thanh tìm kiếm
+animehay.*###navbar form:style(border-radius: 7.5px !important; background-color: rgba(36,36,36) !important)
+animehay.*###navbar .search-bar input:style(border-radius: 7.5px !important; background-color: rgba(36,36,36) !important)
+animehay.*###navbar .search-bar button:style(padding: 0 10px 0 10px !important; border-radius: 0 7.5px 7.5px 0 !important; background-color: rgba(36,36,36) !important)
+! Nút điều hướng (đầu)
+animehay.*###navbar .nav-items a:style(border-radius: 7.5px !important; background-color: rgba(36,36,36) !important)
+! Nút điều hướng (trên thanh ngăn cách)
+animehay.*##.border-default.padding-5-10.bg-blue, .border-default.padding-5-10.bg-red:style(border-radius: 5px !important; background-color: rgba(0,0,0) !important; margin-right: 4px !important)
+! Thanh ngăn cách
+animehay.*##.bg-gray-2:style(border-radius: 7.5px !important; background-color: rgba(36,36,36) !important)
+animehay.*##.fs-17:not(.border-r-b-t):style(border-radius: 7.5px 0 0 7.5px !important)
+animehay.*##.flex-space-between:style(border-radius: 7.5px !important;background-color: rgba(36,36,36) !important)
+animehay.*##.border-r-b-t:style(border-radius: 0 7.5px 7.5px 0 !important)
+animehay.*##.border-l-t::after
+animehay.*##.border-l-b-t::after
+animehay.*##.border-r-b-t::before
+! Nền kệ (chung)
+animehay.*##.ah-frame-bg:style(border-radius: 7.5px !important; background-color: rgba(36,36,36) !important)
+animehay.*##.ah_noti:style(border-radius: 5px !important; background-color: rgba(24,24,24) !important)
+! Kệ phim
+animehay.*##.movies-list .movie-item:style(background-color: rgba(0,0,0,0) !important; color: #ffffff !important)
+animehay.*##.movies-list .movie-item .score:style(border-radius: unset !important; background-color: rgba(172,147,74,0.8) !important; color: #ffffff !important; bottom: 35px !important; right: 5px !important)
+animehay.*##.episode-latest, .episode_latest:style(border-radius: unset !important; background-color: rgba(156,46,58,0.8) !important; color: #ffffff !important)
+animehay.*##.episode-latest:style(top: 5px !important; left: 5px !important)
+animehay.*##.episode_latest:style(top: 0 !important; left: 0 !important)
+! Thanh lọc phim
+animehay.*###filter-movie:style(border-radius: 7.5px !important; background-color: rgba(36,36,36) !important)
+animehay.*##.bg-blue:style(border-radius: 7.5px 7.5px 0 0 !important)
+animehay.*##.bg-red:style(border-radius: unset !important; background-color: rgba(156,46,58) !important)
+animehay.*##.condition-filter > div:style(background-color: rgba(36,36,36) !important)
+animehay.*##.flex-ver-center.display-none:style(border-radius: 7.5px !important; background-color: rgba(36,36,36) !important)
+animehay.*##div#filtering div:style(border-radius: 5px !important)
+! Thông tin phim
+animehay.*##.info-movie .head:style(border-radius: 0 0 7.5px 7.5px !important; background-color: rgba(36,36,36) !important)
+animehay.*##.info-movie .heading_movie:style(border-radius: 7.5px 7.5px 0 0 !important; background-color: rgba(64,64,64,0.5) !important)
+animehay.*##.info-movie .head .first:style(padding: 0 !important; width: 25% !important)
+animehay.*##.name_other, .list_cate, .score, .status, .update_time, .duration:style(border-bottom: 0.5px !important; border-color: rgba(200,200,200,0.05) !important)
+! Nút xem phim, theo dõi, đánh giá
+animehay.*##.fs-35:style(background-color: rgba(0,0,0,0) !important; padding: 0 !important)
+! Phần phim và bảng tập phim
+animehay.*##.bind_movie a:not(.bind_movie a.active):style(border-radius: 5px !important; background-color: rgba(64,64,64,0.5) !important; margin: 0 7px 4px 0 !important)
+animehay.*##.bind_movie a.active:style(border-radius: 5px !important; background-color: rgba(38,141,116) !important; margin: 0 7px 4px 0 !important)
+animehay.*##.info-movie .list_episode .list-item-episode a:not(.list-item-episode a:visited):style(border: 0.25px solid rgba(255,255,255,0.1) !important; background-color: rgba(36,36,36) !important)
+animehay.*##.list-item-episode a:visited:style(border: 0.25px solid rgba(255,255,255,0.1) !important; background-color: rgba(64,64,64) !important)
+! Xem phim (các nút điều hướng)
+animehay.*##.fs-21:style(background-color: unset !important; color: #CAC9C9 !important)
+animehay.*##.fs-17:style(background-color: rgba(255,255,255,0) !important; color: #CAC9C9 !important)
+animehay.*##.button-default:not(.fs-21, .bg-green, .flex-hozi-center.fw-500.flex.margin-10-0.bg-red.padding-10-20.button-default):style(border-radius: 7.5px !important; background-color: rgba(36,36,36) !important)
+animehay.*##.bg-green:not(.fs-35):style(border-radius: 7.5px !important; background-color: rgba(72,72,72,0.75) !important)
+! Xem phim (danh sách tập phim)
+animehay.*##.watching-movie .list-item-episode a:not(.list-item-episode a:visited, .watching-movie .list-item-episode a[active]):style(border: 0.25px solid rgba(255,255,255,0.1) !important; background-color: rgba(36,36,36) !important)
+animehay.*##.watching-movie .list-item-episode a[active]:style(border: 0.25px solid rgba(255,255,255,0.1) !important; background-color: rgba(156,46,58,0.75) !important)
+! Avater comment
+animehay.*##.user-comment .left .avatar:style(border-radius: 5px !important)
+! Thành phần trong Nút danh sách
+animehay.*##.tab-links a:not(.tab-links a.active):style(background-color: rgba(36,36,36) !important)
+animehay.*##.tab-links a.active:style(background-color: rgba(156,46,58) !important)
+animehay.*###drop-down-1 .tab-content a:style(background-color: rgba(72,72,72,0.5) !important; border: 0.25px solid rgba(0,0,0,0.1) !important)
+! Lịch sử
+animehay.*##.watch-history .item a > div:last-child:style(border: 0.5px solid rgba(0,0,0,0) !important; border-radius: 0 7.5px 7.5px 0 !important; background-color: rgba(64,64,64,0.5) !important; height: 38px !important)
+animehay.*##.watch-history .item a > div:first-child:style(border-radius: 7.5px 0 0 7.5px!important; background-color: rgba(64,64,64,0.5) !important; width: 60px !important)
+animehay.*##.watch-history .item a img:style(width: 60px !important)
+
+! Animet
+animet.*##^#animet_off_ads
+animet.*##^#comments
+animet.*##^#hot-home
+animet.*##^#mv-keywords
+animet.*##^#textsv
+animet.*##^.AAIco-play_arrow.ico-play
+animet.*##^.alert-info.alert
+animet.*##^.announcement
+animet.*##^.bg-lochinvar.noti-info
+animet.*##^.col-xs-4.col-sm-4.col-md-2.col-lg-2.name
+animet.*##^.Container > p
+animet.*##^.ListSocial
+animet.*##^.Logo
+animet.*##^.menu-item-home
+animet.*##^.Prct
+animet.*##^.schedule-title-main
+animet.*##^.social-button
+animet.*##^.underplayer_btn
+animet.*##^.WebDescription
+animet.*##^.widget-area
+animet.*##^main > .Wdgt
+animet.*##.list-server1:style(background-color: unset !important)
+! Disable border radius
+animet.*##*:style(border-radius: unset !important)
+
+! Motchill
+! Footer ads
+/^.*?motchill.*?$/###catfish
+! Footer
+/^.*?motchill.*?$/##.clearfix.myui-foot
+! Home button
+/^.*?motchill.*?$/##.nav-menu.myui-header__menu > .active > [href="/"]
+! Tags
+/^.*?motchill.*?$/##.space-y-2.mt-2
+! Comments
+/^.*?motchill.*?$/##.border-opacity-75.border-gray-800.border-t.mt-2
+! Share
+/^.*?motchill.*?$/##.mt-2.px-2.py-2.bg-black.items-center.flex-wrap.flex.sharing-buttons
+! Keyworks
+/^.*?motchill.*?$/##.border-opacity-75.border-gray-800.border-t.pb-2.mt-3
+! Notify
+/^.*?motchill.*?$/##.my-2.text-sm.border-yellow-800.border.bg-black.px-1.py-2
+! Server buttons
+/^.*?motchill.*?$/##.block.pb-2.font-bold.text-sm
+! Status buttons
+/^.*?motchill.*?$/##.shadow-red-900\/20:style(background-color: rgba(163,118,93,0.75) !important)
+! Fonts
+/^.*?motchill.*?$/##*:style(font-family: "SF Pro Display", sans-serif !important; font-weight: normal !important)
+
+! Phimmoi
+! Ads
+/^.*?phimmoi.*?$/##^.ad-container
+/^.*?phimmoi.*?$/##^#footer_fixed_ads
+! Footer
+/^.*?phimmoi.*?$/##^.footer
+! Notify, comments, tags & trailers
+/^.*?phimmoi.*?$/##^.block-note
+/^.*?phimmoi.*?$/##^.block-comments
+/^.*?phimmoi.*?$/##^.block-tags
+! Suggest shelf, update shelf
+/^.*?phimmoi.*?$/##^.col-left, .col-right, .col-lg-12
+! Year
+/^.*?phimmoi.*?$/##^.movie-title-chap
+! Rating, user action
+/^.*?phimmoi.*?$/##^.box-rating
+/^.*?phimmoi.*?$/##^.user-action
+! Re-design
+! Border & shadow
+/^.*?phimmoi.*?$/##*:style(border: unset ! important; text-shadow: unset !important)
+! Watch button
+/^.*?phimmoi.*?$/##.btn-block:style(background-color: rgba(0,0,0,0.25) !important)
+! Status button
+/^.*?phimmoi.*?$/##.btn3d:style(margin: 0 !important; border-radius: 0 !important; background-image: unset !important)
+/^.*?phimmoi.*?$/##.btn3d.active, .btn3d:hover:style(background-color: rgba(177,0,50,1) !important; color: white !important)
+/^.*?phimmoi.*?$/##.btn3d.black:not(.btn3d.active, .btn3d:hover):style(background-color: rgba(64,64,64,0.75) !important)
+! Title
+/^.*?phimmoi.*?$/##.movie-title-1:style(font-size: 12px !important; color: white !important; text-transform: capitalize !important)
+/^.*?phimmoi.*?$/##.movie-title-2:style(font-size: 12px !important; margin: -5px 0 -2px 0 !important; color: rgba(180,180,180) !important)
+/^.*?phimmoi.*?$/##.movie-item .block-wrapper:style(padding: 0 !important)
+! Server
+/^.*?phimmoi.*?$/##^.server-title
+/^.*?phimmoi.*?$/##.server-list:style(margin: 15px 0 -15px 0 ! important)
+! Movie contents
+/^.*?phimmoi.*?$/##.content:style(font-size: 14px !important; font-family: "SF Pro Display", sans-serif !important)
+! Ribbon status
+/^.*?phimmoi.*?$/##.ribbon::after
+/^.*?phimmoi.*?$/##.ribbon:style(padding: 3px 4px 2px 4px !important; left: 0 !important; top: 0 !important; background-color: rgba(177,0,50,0.75) !important)
+! Fonts
+/^.*?phimmoi.*?$/##*:style(font-weight: normal !important)
+/^.*?phimmoi.*?$/###mega-menu-1, .title-list-index, .title-1, h2:style(font-family: "UTB Bebas Title", 'UTMCafetaRegular', sans-serif !important)
+/^.*?phimmoi.*?$/###mega-menu-1 li .sub a:style(font-family: "SF Pro Display", sans-serif !important)
+
+! 4horlover
+4horlover.com##^.mtsnb-fixed
+4horlover.com##^.site-footer
+4horlover.com##^#custom_html-2
+4horlover.com##^#custom_html-3
+4horlover.com##^#custom_html-4
+4horlover.com##^.custom-html-widget
+4horlover.com##^.widget_meta
+4horlover.com##^.widget_media_image
+4horlover.com##^.category-uncategorized.hentry.sticky
+4horlover.com##^.uivnukslgdwvkodhsoepxuhnqwmxtthnzbmbprtxpyzhnebmkxbzunlqk
+
+! iGay69
+igay69.com##.separator

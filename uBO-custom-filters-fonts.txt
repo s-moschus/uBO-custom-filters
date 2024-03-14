@@ -1,0 +1,123 @@
+[Adblock Plus 2.0]
+! Title: uBO Custom filters - Fonts
+! Version: 2024.03.14
+! Description: Change fonts on some websites
+! Homepage: https://github.com/s-moschus/uBO-custom-filters/blob/main/uBO-custom-filters-fonts.txt
+
+! General
+*##:is(button, body, input, label, select, td, textarea, .rrkovp55):not(pre, code, .fa, .fas, .far, .fal, .fad, .fab, .file-icon, .material-icons, .material-icons-round, .material-icons-extended, .google-material-icons, .uix_icon, .mdc-toolbar__icon--menu, .starstruck, .cancel-off-png, .cancel-on-png, .star-half-png, .star-off-png, .star-on-png, .widget-social, ul.social-links, li.dtl, i.dt-icon, header.responsive, a.aresp, .hArJGc,.search__clear, .search__button):style(font-family: "SF Pro Display", sans-serif !important)
+*##code:style(font-family: "JetBrains Mono", monospace !important)
+
+! DuckDuckGo
+duckduckgo.com##:is(button, body, input, label, select, td, textarea, .LQVY1Jpkk8nyJ6HBWKAk.EKtkFWMYpwzMKOYr0GYm):not(pre, code, .search__clear, .search__button, .cloudsave__icn):style(font-family: "SF Pro Display", sans-serif !important)
+duckduckgo.com##pre, code:style(font-family: "JetBrains Mono", monospace !important)
+duckduckgo.com##.E2eLOJr8HctVnDOTM8fs, .cPy9QU4brI7VQXFNPEvF.wZ4JdaHxSAhGy1HoNVja.EwBVRZ62P2JekkbusBsm, .module__content:style(font-family: "SF Pro Display", sans-serif !important; text-align:justify !important)
+
+! Mozilla
+mozilla.org,firefox.com,thunderbird.net##*:style(font-family: "SF Pro Display", sans-serif !important)
+
+! Microsoft Bing
+bing.com##*:not(pre, code, .content span):style(font-family: "SF Pro Display", sans-serif !important)
+! Microsoft Copilot
+copilot.microsoft.com##*:not(pre, code, .content span):style(font-family: "SF Pro Display", sans-serif !important)
+! Microsoft Start
+msn.com##*:style(font-family: "SF Pro Display", sans-serif !important)
+
+! MediaFire
+mediafire.com##*:style(font-family: "SF Pro Display", sans-serif !important)
+
+! Fshare
+fshare.vn##*:not(.fa, .material-icons, .file-icon):style(font-family: "SF Pro Display", sans-serif !important)
+
+! TimFshare
+timfshare.com##*:not(.fa, .material-icons, .file-icon):style(font-family: "SF Pro Display", sans-serif !important)
+
+! Meta (Style for general)
+facebook.com,instagram.com,threads.net##*:style(font-family: "SF Pro Display", sans-serif !important)
+
+! 𝕏 Twitter
+twitter.com##*:style(font-family: "SF Pro Display", sans-serif !important)
+
+! Reddit
+reddit.com##*:not(pre, code, .AI9MP):style(font-family: "SF Pro Display", sans-serif !important)
+reddit.com##pre, code:style(font-family: "JetBrains Mono", monospace !important)
+
+! TikTok
+tiktok.com##*:style(font-family: "SF Pro Display", sans-serif !important)
+
+! Pinterest
+pinterest.com##*:style(font-family: "SF Pro Display", sans-serif !important)
+
+! Google (Style for general)
+google.com,~fonts.google.com##*:not(.mat-icon, .material-icons, .google-material-icons, .material-icons-extended, .google-symbols, .DPvwYc, .devsite-nav-toggle):style(font-family: "SF Pro Display", sans-serif !important)
+
+! YouTube
+youtube.com,youtubekids.com##:not(.vjsd-icon):style(font-family: "SF Pro Display", sans-serif !important)
+
+! Voz
+voz.vn##*:not(code, kbd, pre, samp, .shareButtons-button > i, .shareInput-button > i, .fancybox-button > i, .reaction.reaction--imageHidden.reaction--1 i, .fa, .fas, .far, .fal, .fad, .fab):style(font-family: "SF Pro Display", sans-serif !important)
+voz.vn##code, kbd, pre, samp:style(font-family: "JetBrains Mono", monospace !important)
+
+! Vn-z (Block)
+vn-z.vn##*:not(.fa, .fas, .far, .fal, .fad, .fab, .alertToggler-icon, .shareButtons-button>i, .shareButtons-button.shareButtons-button--brand>i):style(font-family: "SF Pro Display", sans-serif !important)
+
+! Techrum
+techrum.vn##*:not(.fa, .shareButtons-button > i):style(font-family: "SF Pro Display", sans-serif !important)
+
+! Gitlab
+!gitlab.com##.monospace, .code.white .diff-line-num, .code.white .diff-line-num a, div.file-content.code pre code .line:style(font-family: "SF Mono", monospace !important)
+
+! Github
+github.com##pre, code, .blob-code, .blob-code-marker, .input-monospace, .markdown-body code, .react-blob-textarea, .react-blob-print-hide, read-only-cursor-text-area, .react-code-text, .react-code-lines, .cm-content, .cm-line:style(font-family: "JetBrains Mono", monospace !important)
+
+! Genius
+genius.com##*:style(font-family: "SF Pro Display", sans-serif !important; font-weight: 400 !important)
+
+! Nilesoft
+nilesoft.org##*:not(.i):style(font-family: "SF Pro Display", sans-serif !important)
+
+! VirusTotal
+virustotal.com##*:style(font-family: "SF Pro Display", sans-serif !important)
+
+! VNExpress
+vnexpress.net##*:style(font-family: "SF Pro Display", sans-serif !important)
+
+! Icecream Apps
+icecreamapps.com##*:style(font-family: "SF Pro Display", sans-serif !important)
+
+! Taiwebs
+taiwebs.com##*:not(.fa):style(font-family: "SF Pro Display" !important)
+
+! APK Flash
+apkflash.com##.files-header:style(font-family: "JetBrains Mono", monospace !important)
+apkflash.com##code:style(font-family: "SF Pro Display", sans-serif !important; font-weight: bold !important)
+
+! APK Combo
+apkcombo.com##code:style(font-family: "JetBrains Mono", monospace !important)
+
+! Tuan Phong
+tuanphong.vn##*:not(.icm):style(font-family: "SF Pro Display", sans-serif !important)
+
+! TheGioiDiDong
+thegioididong.com##*:style(font-family: "SF Pro Display", sans-serif !important)
+
+! HentaiVN
+hentaivn.*##*:style(font-family: "SF Pro Display", sans-serif !important; font-weight: normal !important)
+
+! Wattpad
+wattpad.com##pre:style(font-family: "Vollkorn", serif !important)
+
+! BoyfriendTV
+boyfriendtv.com##*:not(.fa):style(font-family: "SF Pro Display", sans-serif !important)
+
+! Gayteam
+gayteam.club##*:not(.fa, .fab, .fad, .fal, .far, .fas):style(font-family: "SF Pro Display", sans-serif !important)
+
+! Streamtape
+streamtape.com##*:style(font-family: "SF Pro Display", sans-serif !important)
+! 4horlover
+4horlover.com##*:style(font-family: "SF Pro Display", sans-serif !important)
+
+! Md.gvdb.org
+md.gvdb.org##*:not(.fa, .fab, .fad, .fal, .far, .fas, .icon-user, .icon-people, .icon-user-female, .icon-user-follow, .icon-user-following, .icon-user-unfollow, .icon-login, .icon-logout, .icon-emotsmile, .icon-phone, .icon-call-end, .icon-call-in, .icon-call-out, .icon-map, .icon-location-pin, .icon-direction, .icon-directions, .icon-compass, .icon-layers, .icon-menu, .icon-list, .icon-options-vertical, .icon-options, .icon-arrow-down, .icon-arrow-left, .icon-arrow-right, .icon-arrow-up, .icon-arrow-up-circle, .icon-arrow-left-circle, .icon-arrow-right-circle, .icon-arrow-down-circle, .icon-check, .icon-clock, .icon-plus, .icon-minus, .icon-close, .icon-exclamation, .icon-organization, .icon-trophy, .icon-screen-smartphone, .icon-screen-desktop, .icon-plane, .icon-notebook, .icon-mustache, .icon-mouse, .icon-magnet, .icon-energy, .icon-disc, .icon-cursor, .icon-cursor-move, .icon-crop, .icon-chemistry, .icon-speedometer, .icon-shield, .icon-screen-tablet, .icon-magic-wand, .icon-hourglass, .icon-graduation, .icon-ghost, .icon-game-controller, .icon-fire, .icon-eyeglass, .icon-envelope-open, .icon-envelope-letter, .icon-bell, .icon-badge, .icon-anchor, .icon-wallet, .icon-vector, .icon-speech, .icon-puzzle, .icon-printer, .icon-present, .icon-playlist, .icon-pin, .icon-picture, .icon-handbag, .icon-globe-alt, .icon-globe, .icon-folder-alt, .icon-folder, .icon-film, .icon-feed, .icon-drop, .icon-drawer, .icon-docs, .icon-doc, .icon-diamond, .icon-cup, .icon-calculator, .icon-bubbles, .icon-briefcase, .icon-book-open, .icon-basket-loaded, .icon-basket, .icon-bag, .icon-action-undo, .icon-action-redo, .icon-wrench, .icon-umbrella, .icon-trash, .icon-tag, .icon-support, .icon-frame, .icon-size-fullscreen, .icon-size-actual, .icon-shuffle, .icon-share-alt, .icon-share, .icon-rocket, .icon-question, .icon-pie-chart, .icon-pencil, .icon-note, .icon-loop, .icon-home, .icon-grid, .icon-graph, .icon-microphone, .icon-music-tone-alt, .icon-music-tone, .icon-earphones-alt, .icon-earphones, .icon-equalizer, .icon-like, .icon-dislike, .icon-control-start, .icon-control-rewind, .icon-control-play, .icon-control-pause, .icon-control-forward, .icon-control-end, .icon-volume-1, .icon-volume-2, .icon-volume-off, .icon-calendar, .icon-bulb, .icon-chart, .icon-ban, .icon-bubble, .icon-camrecorder, .icon-camera, .icon-cloud-download, .icon-cloud-upload, .icon-envelope, .icon-eye, .icon-flag, .icon-heart, .icon-info, .icon-key, .icon-link, .icon-lock, .icon-lock-open, .icon-magnifier, .icon-magnifier-add, .icon-magnifier-remove, .icon-paper-clip, .icon-paper-plane, .icon-power, .icon-refresh, .icon-reload, .icon-settings, .icon-star, .icon-symbol-female, .icon-symbol-male, .icon-target, .icon-credit-card, .icon-paypal, .icon-social-tumblr, .icon-social-twitter, .icon-social-facebook, .icon-social-instagram, .icon-social-linkedin, .icon-social-pinterest, .icon-social-github, .icon-social-google, .icon-social-reddit, .icon-social-skype, .icon-social-dribbble, .icon-social-behance, .icon-social-foursqare, .icon-social-soundcloud, .icon-social-spotify, .icon-social-stumbleupon, .icon-social-youtube, .icon-social-dropbox):style(font-family: "SF Pro Display", sans-serif !important)
+
