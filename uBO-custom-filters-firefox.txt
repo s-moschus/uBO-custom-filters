@@ -1,6 +1,6 @@
 [Adblock Plus 2.0]
 ! Title: uBO Custom filters - Firefox
-! Version: 2024.03.15
+! Version: 2024.03.16
 ! Description: Block some elements and advertise on some websites for Firefox
 ! Homepage: https://github.com/s-moschus/uBO-custom-filters/blob/main/uBO-custom-filters-firefox.txt
 
@@ -54,10 +54,6 @@ timfshare.com##[href="https://bit.ly/hdsdtimfshare"]
 twitter.com,x.com##div.r-1d6w8o1.r-x572qd.r-1udh08x.r-1ifxtd0.r-rs99b7.r-1phboty.r-1867qdf.css-175oi2r:nth-of-type(3)
 twitter.com,x.com##div.r-1d6w8o1.r-x572qd.r-1udh08x.r-1ifxtd0.r-rs99b7.r-1phboty.r-1867qdf.css-175oi2r:nth-of-type(4)
 twitter.com,x.com##.r-ymttw5.r-1w6e6rj.r-18u37iz.css-175oi2r
-
-! Instagram
-instagram.com##._a9-h
-instagram.com##._a9-g
 
 ! Facebook
 ! Block video ads
