@@ -345,29 +345,21 @@ animet.*##.list-server1:style(background-color: unset !important)
 ! Disable border radius
 animet.*##*:style(border-radius: unset !important)
 
-! Motchill
-! Footer ads
-/^.*?motchill.*?$/###catfish
+! Motphim
 ! Footer
-/^.*?motchill.*?$/##.clearfix.myui-foot
-! Home button
-/^.*?motchill.*?$/##.nav-menu.myui-header__menu > .active > [href="/"]
+/^.*?motphim.*?$/###footer
+! List film hot
+/^.*?motphim.*?$/##.film-hot.list-films
 ! Tags
-/^.*?motchill.*?$/##.space-y-2.mt-2
-! Comments
-/^.*?motchill.*?$/##.border-opacity-75.border-gray-800.border-t.mt-2
-! Share
-/^.*?motchill.*?$/##.mt-2.px-2.py-2.bg-black.items-center.flex-wrap.flex.sharing-buttons
-! Keyworks
-/^.*?motchill.*?$/##.border-opacity-75.border-gray-800.border-t.pb-2.mt-3
-! Notify
-/^.*?motchill.*?$/##.my-2.text-sm.border-yellow-800.border.bg-black.px-1.py-2
-! Server buttons
-/^.*?motchill.*?$/##.block.pb-2.font-bold.text-sm
-! Status buttons
-/^.*?motchill.*?$/##.shadow-red-900\/20:style(background-color: rgba(163,118,93,0.75) !important)
+/^.*?motphim.*?$/##.block-tags
+/^.*?motphim.*?$/##.bottom-content > .container
+! Border
+/^.*?motphim.*?$/##*:style(border: unset !important)
+! Label
+/^.*?motphim.*?$/##.label:style(background-color: rgba(197,135,96,0.75) !important)
 ! Fonts
-/^.*?motchill.*?$/##*:style(font-family: "SF Pro Display", sans-serif !important; font-weight: normal !important)
+/^.*?motphim.*?$/##*:not(.fa, .title):style(font-family: "SF Pro Display", sans-serif !important)
+/^.*?motphim.*?$/##.title:style(font-family: "UTB Bebas Title", utmcafetaregular, sans-serif !important)
 
 ! Phimmoi
 ! Ads
