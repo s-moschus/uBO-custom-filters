@@ -1,6 +1,6 @@
 [Adblock Plus 2.0]
 ! Title: uBO Custom filters - Fonts
-! Version: 2024.03.14
+! Version: 2024.03.19
 ! Description: Change fonts on some websites
 ! Homepage: https://github.com/s-moschus/uBO-custom-filters/blob/main/uBO-custom-filters-fonts.txt
 
@@ -14,7 +14,7 @@ duckduckgo.com##pre, code:style(font-family: "JetBrains Mono", monospace !import
 duckduckgo.com##.E2eLOJr8HctVnDOTM8fs, .cPy9QU4brI7VQXFNPEvF.wZ4JdaHxSAhGy1HoNVja.EwBVRZ62P2JekkbusBsm, .module__content:style(font-family: "SF Pro Display", sans-serif !important; text-align:justify !important)
 
 ! Mozilla
-mozilla.org,firefox.com,thunderbird.net##*:style(font-family: "SF Pro Display", sans-serif !important)
+mozilla.org,firefox.com,thunderbird.net##*:not(.icon):style(font-family: "SF Pro Display", sans-serif !important)
 
 ! Microsoft Bing
 bing.com##*:not(pre, code, .content span):style(font-family: "SF Pro Display", sans-serif !important)
