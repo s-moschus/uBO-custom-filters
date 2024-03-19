@@ -1,6 +1,6 @@
 [Adblock Plus 2.0]
 ! Title: uBO Custom filters - Firefox
-! Version: 2024.03.16
+! Version: 2024.03.19
 ! Description: Block some elements and advertise on some websites for Firefox
 ! Homepage: https://github.com/s-moschus/uBO-custom-filters/blob/main/uBO-custom-filters-firefox.txt
 
@@ -78,6 +78,10 @@ tiktok.com##.ejkrawn3
 ! Google
 gemini.google.com##.banner
 play.google.com##.f0UV3d > span
+! Google login dialogs on various pages
+||accounts.google.com/gsi/*$xhr,script,3p
+! "Peopel also search for..."
+google.*##[id^="eob_"]
 
 ! YouTube
 ! Margin title video (use with Nova YouTube script: Control panel below the player > on)
@@ -167,7 +171,6 @@ vnexpress.net###g_id_onload
 /^.*?ketqua.*?$/###ads-block-notice
 
 ! APK Pure
-apkpure.net###g_id_container
 apkpure.net##^#policy-info
 apkpure.net##^.chrome-install-pop
 apkpure.net##^.debut-game
