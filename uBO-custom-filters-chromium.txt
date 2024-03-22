@@ -393,6 +393,7 @@ animet.*##*:style(border-radius: unset !important)
 ! Ads
 /^.*?phimmoi.*?$/##.ad-container
 /^.*?phimmoi.*?$/###footer_fixed_ads
+/^.*?phimmoi.*?$/##[href^="https://phimsexxx.tv/"]:remove()
 ! Footer
 /^.*?phimmoi.*?$/##.footer
 ! Notify, comments, tags & trailers
