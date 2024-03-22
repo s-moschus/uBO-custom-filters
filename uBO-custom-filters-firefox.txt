@@ -366,7 +366,7 @@ animet.*##*:style(border-radius: unset !important)
 ! Footer
 /^.*?motchill.*?$/##^#footer
 ! News
-/^.*?motchill.*?$/##^div.film-new.list-films:nth-of-type(9)
+/^.*?motchill.*?$/##^div.film-new.list-films:nth-of-type(5)
 ! Tags & keywords
 /^.*?motchill.*?$/##^.tags
 /^.*?motchill.*?$/##^.keywords
