@@ -1,6 +1,6 @@
 [Adblock Plus 2.0]
 ! Title: uBO Custom filters - Chromium
-! Version: 2024.03.19
+! Version: 2024.03.22
 ! Description: Block some elements and advertise on some websites for Chromium
 ! Homepage: https://github.com/s-moschus/uBO-custom-filters/blob/main/uBO-custom-filters-chromium.txt
 
@@ -347,6 +347,29 @@ animet.*##main > .Wdgt
 animet.*##.list-server1:style(background-color: unset !important)
 ! Disable border radius
 animet.*##*:style(border-radius: unset !important)
+
+! MotchillTV
+! Home button
+/^.*?motchill.*?$/##.active.menu-item
+! Films hot
+/^.*?motchill.*?$/##.film-hot.list-films
+! Footer
+/^.*?motchill.*?$/###footer
+! News
+/^.*?motchill.*?$/##div.film-new.list-films:nth-of-type(9)
+! Tags & keywords
+/^.*?motchill.*?$/##.tags
+/^.*?motchill.*?$/##.keywords
+! Share
+/^.*?motchill.*?$/##.clear.social-menu
+! Note
+/^.*?motchill.*?$/###player-video > .film-note
+/^.*?motchill.*?$/##.tip-change-server.film-note > span
+! Border
+/^.*?motchill.*?$/##*:style(border: unset !important; border-radius: unset !important)
+! Fonts
+/^.*?motchill.*?$/##*:not(.fa, .text .title):style(font-family: "SF Pro Display", sans-serif !important)
+/^.*?motchill.*?$/##.text .title:style(font-family: "UTB Bebas Title", UTMCafetaRegular, sans-serif !important)
 
 ! Motphim
 ! Footer
