@@ -61,6 +61,15 @@ facebook.com##+js(set, Object.prototype.scrubber, undefined)
 ! Hide people you may know on profile
 facebook.com##.x1xmf6yo.xev17xk
 
+! Block Sponsored & Engagement (Suggested posts & Follow button)
+!#if cap_html_filtering
+!||facebook.com^$doc,replace=/\],"data":\{"brs_content_label"[^,]+,"category":"SPONSORED[^\n]+"cursor":"[^"]+"\}/],"data":{}/
+!||facebook.com/api/graphql/$xhr,replace=/\{"brs_content_label":[^,]+,"category":"SPONSORED".+?"cursor":"[^"]+"\}/{}/
+||facebook.com/api/graphql/$xhr,replace=/\{"brs_content_label":[^,]+,"category":"ENGAGEMENT[^\n]+"cursor":"[^"]+"\}/{}/g
+!#else
+!facebook.com##+js(trusted-replace-xhr-response, '\{"brs_content_label":[^,]+,"category":"SPONSORED".+?"cursor":"[^"]+"\}', {}, /api/graphql)
+!#endif
+
 ! TikTok
 tiktok.com##.e1l04njg0
 tiktok.com##.ejkrawn1
