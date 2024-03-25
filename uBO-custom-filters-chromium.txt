@@ -1,6 +1,6 @@
 [Adblock Plus 2.0]
 ! Title: uBO Custom filters - Chromium
-! Version: 2024.03.22
+! Version: 2024.03.25
 ! Description: Block some elements and advertise on some websites for Chromium
 ! Homepage: https://github.com/s-moschus/uBO-custom-filters/blob/main/uBO-custom-filters-chromium.txt
 
@@ -323,30 +323,30 @@ animehay.*##.watch-history .item a > div:first-child:style(border-radius: 7.5px 
 animehay.*##.watch-history .item a img:style(width: 60px !important)
 
 ! Animet
-animet.*###animet_off_ads
-animet.*###comments
-animet.*###hot-home
-animet.*###mv-keywords
-animet.*###textsv
-animet.*##.AAIco-play_arrow.ico-play
-animet.*##.alert-info.alert
-animet.*##.announcement
-animet.*##.bg-lochinvar.noti-info
-animet.*##.col-xs-4.col-sm-4.col-md-2.col-lg-2.name
-animet.*##.Container > p
-animet.*##.ListSocial
-animet.*##.Logo
-animet.*##.menu-item-home
-animet.*##.Prct
-animet.*##.schedule-title-main
-animet.*##.social-button
-animet.*##.underplayer_btn
-animet.*##.WebDescription
-animet.*##.widget-area
-animet.*##main > .Wdgt
-animet.*##.list-server1:style(background-color: unset !important)
+/^.*?animet.*?$/###animet_off_ads
+/^.*?animet.*?$/###comments
+/^.*?animet.*?$/###hot-home
+/^.*?animet.*?$/###mv-keywords
+/^.*?animet.*?$/###textsv
+/^.*?animet.*?$/##.AAIco-play_arrow.ico-play
+/^.*?animet.*?$/##.alert-info.alert
+/^.*?animet.*?$/##.announcement
+/^.*?animet.*?$/##.bg-lochinvar.noti-info
+/^.*?animet.*?$/##.col-xs-4.col-sm-4.col-md-2.col-lg-2.name
+/^.*?animet.*?$/##.Container > p
+/^.*?animet.*?$/##.ListSocial
+/^.*?animet.*?$/##.Logo
+/^.*?animet.*?$/##.menu-item-home
+/^.*?animet.*?$/##.Prct
+/^.*?animet.*?$/##.schedule-title-main
+/^.*?animet.*?$/##.social-button
+/^.*?animet.*?$/##.underplayer_btn
+/^.*?animet.*?$/##.WebDescription
+/^.*?animet.*?$/##.widget-area
+/^.*?animet.*?$/##main > .Wdgt
+/^.*?animet.*?$/##.list-server1:style(background-color: unset !important)
 ! Disable border radius
-animet.*##*:style(border-radius: unset !important)
+/^.*?animet.*?$/##*:style(border-radius: unset !important)
 
 ! MotchillTV
 ! Home button
