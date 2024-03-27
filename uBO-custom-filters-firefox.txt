@@ -1,6 +1,6 @@
 [Adblock Plus 2.0]
 ! Title: uBO Custom filters - Firefox
-! Version: 2024.03.25
+! Version: 2024.03.27
 ! Description: Block some elements and advertise on some websites for Firefox
 ! Homepage: https://github.com/s-moschus/uBO-custom-filters/blob/main/uBO-custom-filters-firefox.txt
 
@@ -225,11 +225,14 @@ cbhentai.net##^.c-sidebar
 docsachhay.net##^.fs-17
 
 ! Wattpad
-wattpad.com##pre:style(text-align: justify !important)
 wattpad.com##.btn-primary
 wattpad.com##.left-rail
 wattpad.com##^#footer-container
-||static.wattpad.com$image,domain=wattpad.com
+||static.wattpad.com/image/2021_House-Ad_Premium$image,domain=wattpad.com
+! Text
+wattpad.com##*:not(.fa, pre, p):style(font-family: "SF Pro Display", sans-serif !important)
+wattpad.com##pre:style(font-family: "Vollkorn", serif !important)
+wattpad.com##pre:style(text-align: justify !important)
 
 ! Pops
 ! Mobile
