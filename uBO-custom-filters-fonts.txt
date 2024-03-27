@@ -1,6 +1,6 @@
 [Adblock Plus 2.0]
 ! Title: uBO Custom filters - Fonts
-! Version: 2024.03.19
+! Version: 2024.03.27
 ! Description: Change fonts on some websites
 ! Homepage: https://github.com/s-moschus/uBO-custom-filters/blob/main/uBO-custom-filters-fonts.txt
 
@@ -103,9 +103,6 @@ thegioididong.com##*:style(font-family: "SF Pro Display", sans-serif !important)
 
 ! HentaiVN
 hentaivn.*##*:style(font-family: "SF Pro Display", sans-serif !important; font-weight: normal !important)
-
-! Wattpad
-wattpad.com##pre:style(font-family: "Vollkorn", serif !important)
 
 ! BoyfriendTV
 boyfriendtv.com##*:not(.fa):style(font-family: "SF Pro Display", sans-serif !important)
