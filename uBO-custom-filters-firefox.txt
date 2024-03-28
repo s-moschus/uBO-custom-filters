@@ -25,6 +25,7 @@ duckduckgo.com##.feedback-btn.btn
 terabox.com,1024tera.com##.drainage-img
 terabox.com,1024tera.com##.seo-banner-box
 terabox.com,1024tera.com##.operate-popup-box
+terabox.com,1024tera.com##.operation-img
 
 ! Fshare
 ! Disable animetion
