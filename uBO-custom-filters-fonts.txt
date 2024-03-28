@@ -1,11 +1,11 @@
 [Adblock Plus 2.0]
 ! Title: uBO Custom filters - Fonts
-! Version: 2024.03.27
+! Version: 2024.03.28
 ! Description: Change fonts on some websites
 ! Homepage: https://github.com/s-moschus/uBO-custom-filters/blob/main/uBO-custom-filters-fonts.txt
 
 ! General
-*##:is(button, body, input, label, select, td, textarea, .rrkovp55):not(pre, code, .fa, .fas, .far, .fal, .fad, .fab, .file-icon, .material-icons, .material-icons-round, .material-icons-extended, .google-material-icons, .uix_icon, .mdc-toolbar__icon--menu, .starstruck, .cancel-off-png, .cancel-on-png, .star-half-png, .star-off-png, .star-on-png, .widget-social, ul.social-links, li.dtl, i.dt-icon, header.responsive, a.aresp, .hArJGc,.search__clear, .search__button):style(font-family: "SF Pro Display", sans-serif !important)
+*##:is(button, body, input, label, select, td, textarea, .rrkovp55):not(pre, code, .fa, .fas, .far, .fal, .fad, .fab, .file-icon, .material-icons, .material-icons-round, .material-icons-extended, .google-material-icons, .iconfont, .uix_icon, .mdc-toolbar__icon--menu, .starstruck, .cancel-off-png, .cancel-on-png, .star-half-png, .star-off-png, .star-on-png, .widget-social, ul.social-links, li.dtl, i.dt-icon, header.responsive, a.aresp, .hArJGc,.search__clear, .search__button):style(font-family: "SF Pro Display", sans-serif !important)
 *##code:style(font-family: "JetBrains Mono", monospace !important)
 
 ! DuckDuckGo
