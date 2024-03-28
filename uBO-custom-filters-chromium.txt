@@ -1,6 +1,6 @@
 [Adblock Plus 2.0]
 ! Title: uBO Custom filters - Chromium
-! Version: 2024.03.27
+! Version: 2024.03.28
 ! Description: Block some elements and advertise on some websites for Chromium
 ! Homepage: https://github.com/s-moschus/uBO-custom-filters/blob/main/uBO-custom-filters-chromium.txt
 
@@ -24,6 +24,7 @@ duckduckgo.com##.feedback-btn.btn
 ! Terabox
 terabox.com,1024tera.com##.drainage-img
 terabox.com,1024tera.com##.seo-banner-box
+terabox.com,1024tera.com##.operate-popup-box
 
 ! Fshare
 ! Disable animetion
